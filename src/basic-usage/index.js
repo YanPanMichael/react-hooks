@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Counter = ({counter, onClick}) => {
+export const Counter = ({count, onClick}) => {
   return (
     <div>
-      <div onClick={onClick}>数量：{counter}, 点击递增</div>
+      <div onClick={onClick}>数量：{count}, 点击递增</div>
     </div>
   )
 }
