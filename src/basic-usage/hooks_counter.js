@@ -4,7 +4,9 @@ import React, {
   useRef,
   useMemo,
   useCallback,
+  useContext,
 } from 'react';
+import { ConfigContext } from '../util';
 
 // import { EventEmitter } from 'fbemitter';
 
@@ -17,6 +19,8 @@ const CounterHooks = () => {
   const ref = useRef();
   const memoValue = useMemo(() => count * 2, [count]);
   const onClickCountDesc = useCallback(() => setCount(c => c - 2), [count]);
+  const config = useContext(ConfigContext)
+
   useEffect(() => {
     if(count > 5) {
       console.log('inner', count);
@@ -34,6 +38,9 @@ const CounterHooks = () => {
       </div>
       <div className="desc-list">
         计数两倍后为{memoValue}
+      </div>
+      <div className="desc-list">
+        color: {config.color}
       </div>
     </div>
   )
