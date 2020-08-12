@@ -1,5 +1,5 @@
 import '@babel/polyfill';
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import CounterCls from './basic-usage/counter';      
 import CounterHooks from './basic-usage/hooks_counter';

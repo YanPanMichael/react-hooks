@@ -17,9 +17,10 @@ import { ConfigContext } from '../util';
 const CounterHooks = () => {
   const [count, setCount] = useState(c => c = 0);
   const ref = useRef();
+  // useMemo useCallback用来在函数组件里存放一些变量 这些变量只有在指定条件下才执行 其他条件下不变
   const memoValue = useMemo(() => count * 2, [count]);
   const onClickCountDesc = useCallback(() => setCount(c => c - 2), [count]);
-  const config = useContext(ConfigContext)
+  const config = useContext(ConfigContext);
 
   useEffect(() => {
     if(count > 5) {
